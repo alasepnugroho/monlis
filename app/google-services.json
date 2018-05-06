@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "71056136908",
+    "firebase_url": "https://monlis-listrik.firebaseio.com",
+    "project_id": "monlis-listrik",
+    "storage_bucket": "monlis-listrik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71056136908:android:b29ae1c0bc966da9",
+        "android_client_info": {
+          "package_name": "com.example.toothless.monlis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71056136908-5i91stphn81849qvgc47nlvfitoob51a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.toothless.monlis",
+            "certificate_hash": "9e98fdf55dd2e3464c1a205b62f4d497f8b5d56b"
+          }
+        },
+        {
+          "client_id": "71056136908-1nd8dvhb4stvp5v169o8f49tan38pmb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9kr91YfUrYR0jSLkZWQbJ8oApdGbl6B4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71056136908-1nd8dvhb4stvp5v169o8f49tan38pmb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
