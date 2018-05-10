@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp">
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/energiTxt"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Energi"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/biayaTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Biaya"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="12dp" />
+
+
+        <TextView
+            android:id="@+id/batas_energi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Batas_biaya"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="10dp" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

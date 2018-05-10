@@ -37,19 +37,10 @@ import okhttp3.Response;
 public class RegisterActivity extends AppCompatActivity {
     Button signup;
     //UserSessionManager session;
-    EditText nama_et, username_et, email_et, password_et,con_password_et, no_meteran_et, gol_listrik_et;
+    EditText nama_et, username_et, email_et, password_et,con_password_et, id_channel_et, gol_listrik_et;
     TextView login;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    get_url_link link = new get_url_link();
-    String url = link.getUrl_link("get_datalistrik");
-    Spinner spinner_dataListrik;
-    ProgressDialog pDialog;
-    List<Data> listDataListrik = new ArrayList<Data>();
-    private static final String TAG = RegisterActivity.class.getSimpleName();
-
-    public static final String TAG_ID = "id";
-    public static final String TAG_PENDIDIKAN = "pendidikan";
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +54,14 @@ public class RegisterActivity extends AppCompatActivity {
         email_et = (EditText) findViewById(R.id.email);
         password_et = (EditText) findViewById(R.id.password);
         con_password_et = (EditText) findViewById(R.id.confirm_password);
-        no_meteran_et = (EditText) findViewById(R.id.no_meteran);
+        id_channel_et = (EditText) findViewById(R.id.id_channel);
         gol_listrik_et = (EditText) findViewById(R.id.gol_listrik);
         final TextInputLayout nama_lay = (TextInputLayout) findViewById(R.id.textInputNama);
         final TextInputLayout username_lay = (TextInputLayout) findViewById(R.id.textInputUsername);
         final TextInputLayout email_lay = (TextInputLayout) findViewById(R.id.textInputEmail);
         final TextInputLayout password_lay = (TextInputLayout) findViewById(R.id.textInputPassword);
         final TextInputLayout con_pass_lay = (TextInputLayout) findViewById(R.id.textInputConfPassword);
-        final TextInputLayout no_meteran_lay = (TextInputLayout) findViewById(R.id.textInputNoMeteran);
+        final TextInputLayout id_channel_lay = (TextInputLayout) findViewById(R.id.textInputIdChannel);
         final TextInputLayout gol_listrik_lay = (TextInputLayout) findViewById(R.id.textInputGolListrik);
 
 
@@ -94,10 +85,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String username = username_et.getText().toString().toLowerCase();
                 String email = email_et.getText().toString().toLowerCase();
                 String password = password_et.getText().toString().toLowerCase();
-                String no_meteran = no_meteran_et.getText().toString();
+                String id_channel = id_channel_et.getText().toString();
                 String gol_listrik = gol_listrik_et.getText().toString();
 
-                new register().execute(nama,username,password,email,no_meteran,gol_listrik);
+                new register().execute(nama,username,password,email,id_channel,gol_listrik);
             }
         });
 
@@ -167,14 +158,14 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-        no_meteran_et.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+        id_channel_et.setOnFocusChangeListener(new View.OnFocusChangeListener(){
             @Override
             public void onFocusChange (View v, boolean hasFocus){
-                if (no_meteran_et.getText().toString().equals("")){
-                    no_meteran_lay.setError("No Meteran is Empty.");
+                if (id_channel_et.getText().toString().equals("")){
+                    id_channel_lay.setError("No. Alat is Empty.");
                     signup.setEnabled(false);
                 }else {
-                    no_meteran_lay.setError(null);
+                    id_channel_lay.setError(null);
                     signup.setEnabled(true);
                 }
             }
@@ -209,7 +200,7 @@ public class RegisterActivity extends AppCompatActivity {
             String username = params[1];
             String password = params[2];
             String email = params[3];
-            String no_meteran = params[4];
+            String id_channel = params[4];
             String gol_listrik = params[5];
             get_url_link link = new get_url_link();
             String url = link.getUrl_link("api_register");
@@ -218,7 +209,7 @@ public class RegisterActivity extends AppCompatActivity {
                 OkHttpClient client = new OkHttpClient();
 
                 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-                RequestBody body = RequestBody.create(mediaType, "nama="+nama+"&username="+username+"&password="+password+"&email="+email+"&no_meteran="+no_meteran+"&gol_listrik="+gol_listrik);
+                RequestBody body = RequestBody.create(mediaType, "nama="+nama+"&username="+username+"&password="+password+"&email="+email+"&id_channel="+id_channel+"&gol_listrik="+gol_listrik);
                 Request request = new Request.Builder()
                         .url(url)
                         .post(body)

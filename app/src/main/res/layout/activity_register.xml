@@ -125,14 +125,14 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/textInputNoMeteran"
+                android:id="@+id/textInputIdChannel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/no_meteran"
+                    android:id="@+id/id_channel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="No. Meteran"
+                    android:hint="No. Alat"
                     android:inputType="numberDecimal"
                     android:maxLines="1"
                     android:singleLine="true" />
